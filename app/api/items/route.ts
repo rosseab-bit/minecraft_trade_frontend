@@ -1,5 +1,5 @@
 export async function GET() {
-  const response = await fetch("http://127.0.0.1:8000/items");
+  const response = await fetch("http://trademinecraftapi.bitsar.com.ar/items");
 
   const data = await response.json(); // <- esto faltaba
 

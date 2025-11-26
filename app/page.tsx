@@ -1,4 +1,5 @@
 "use client";
+import { truncate } from "fs";
 import { useEffect, useState } from "react";
 const data_spanish: Record<string, string> = {
   anvil: "yunque",
@@ -99,6 +100,13 @@ export default function Home() {
     console.log('[click-convert]')
     convertPost();
   }
+  const disabledButton = () => {
+    if (tengo.length > 0 && quiero.length > 0 && countItem) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   useEffect(() => {
     getItems();
@@ -139,12 +147,14 @@ export default function Home() {
               </option>
             ))}
           </select>
-          <button className={`${!countItem ? 'button-style-disabled' : 'button-style' }`} onClick={handleConvert}>Calcular</button>
-          {dataConvert &&
+          <button className={`${!disabledButton() ? 'button-style-disabled' : 'button-style' }`} onClick={handleConvert}>Calcular</button>
+          {disabledButton() &&
           <div className="result-trade">
             <span className="detail-convert">Con {dataConvert?.source_amount} de {data_spanish[tengo]}</span>
             <section className="line-solid"></section>
             <span className="detail-convert">Obtienes {dataConvert?.result_amount} de {data_spanish[quiero]}</span>
+            <section className="line-solid"></section>
+            <span className="detail-convert">Cotizacion del diamante 💎 {dataConvert?.diamond_equivalent}</span>
           </div>}
         </div>
       )}
