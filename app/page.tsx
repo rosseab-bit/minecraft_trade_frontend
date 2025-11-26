@@ -124,9 +124,12 @@ export default function Home() {
           <select
             className="select-style"
             name="select"
-            defaultValue="value2"
+            defaultValue="selecciona"
             onChange={(e) => handleTengo(e.target.value)}
           >
+            <option className="option-style" value="selecciona">
+              Selecciona
+              </option>
             {dataTrade.map((item: string, index: number) => (
               <option className="option-style" key={index} value={item}>
                 {data_spanish[item]}
@@ -138,9 +141,12 @@ export default function Home() {
           <select
             className="select-style"
             name="select"
-            defaultValue="value2"
+            defaultValue="selecciona"
             onChange={(e) => handleQuiero(e.target.value)}
           >
+             <option className="option-style" value="selecciona">
+              Selecciona
+              </option>
             {dataTrade.map((item: string, index: number) => (
               <option key={index} value={item}>
                 {data_spanish[item]}
@@ -154,7 +160,7 @@ export default function Home() {
             <section className="line-solid"></section>
             <span className="detail-convert">Obtienes {dataConvert?.result_amount} de {data_spanish[quiero]}</span>
             <section className="line-solid"></section>
-            <span className="detail-convert">Cotizacion del diamante 💎 {dataConvert?.diamond_equivalent}</span>
+            <span className="detail-convert">Equivalente en diamante 💎 {dataConvert?.diamond_equivalent}</span>
           </div>}
         </div>
       )}
