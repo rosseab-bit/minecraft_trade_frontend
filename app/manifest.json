@@ -1,0 +1,19 @@
+{
+  "name": "Minecraft Trade",
+  "short_name": "TradeMC",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#628141",
+  "background_color": "#628141",
+  "display": "standalone"
+}
