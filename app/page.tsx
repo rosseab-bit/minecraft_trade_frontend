@@ -148,7 +148,7 @@ export default function Home() {
             ))}
           </select>
           <button className={`${!disabledButton() ? 'button-style-disabled' : 'button-style' }`} onClick={handleConvert}>Calcular</button>
-          {disabledButton() &&
+          {dataConvert &&
           <div className="result-trade">
             <span className="detail-convert">Con {dataConvert?.source_amount} de {data_spanish[tengo]}</span>
             <section className="line-solid"></section>
