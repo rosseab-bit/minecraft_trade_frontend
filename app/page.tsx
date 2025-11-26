@@ -68,7 +68,6 @@ export default function Home() {
   const getItems = async () => {
     const res = await fetch("/api/items");
     const data = await res.json();
-    console.log("[items]: ", data);
     setDataTrade(data);
   };
   const convertPost = async () => {
@@ -84,7 +83,6 @@ export default function Home() {
     });
     const data = await res.json();
     setDataConvert(data);
-    console.log('[res-convert] : ', data)
   }
   const handleCount = (e:any) => {
     setCountItem(e);
@@ -97,7 +95,6 @@ export default function Home() {
   }
   const handleConvert = () => {
     if(!countItem) return
-    console.log('[click-convert]')
     convertPost();
   }
   const disabledButton = () => {
